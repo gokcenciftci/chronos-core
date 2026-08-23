@@ -1,0 +1,49 @@
+{
+  "name": "chronos-core",
+  "version": "1.0.0",
+  "description": "High-Throughput Embedded Time-Series & Event Stream Storage Engine with Segmented WAL and Streaming Analytics",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "chronos": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "node -e \"fs.rmSync('dist', {recursive:true,force:true}); fs.rmSync('coverage', {recursive:true,force:true})\"",
+    "start": "node dist/cli.js",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:durability": "vitest run tests/durability",
+    "test:coverage": "vitest run --coverage",
+    "bench": "vitest bench --run",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "time-series",
+    "storage-engine",
+    "event-stream",
+    "wal",
+    "write-ahead-log",
+    "skiplist",
+    "ring-buffer",
+    "in-memory",
+    "streaming-analytics",
+    "zero-dependency",
+    "high-throughput"
+  ],
+  "author": "Gökçen Çiftci <gokcenciftci938@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

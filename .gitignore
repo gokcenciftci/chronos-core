@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+*.wal
+*.log
+.DS_Store
